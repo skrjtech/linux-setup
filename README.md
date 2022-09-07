@@ -13,14 +13,15 @@ githubから初期設定などのスクリプトを落とす
 git clone https://github.com/skrjtech/linuxsetup-beginner.git
 cd linuxsetup-beginner
 ```
-単純なセットアップ
+単純なセットアップ\
+-s 指定でそれぞれのアップデートを行う
 ```
 # . linuxsetup.sh [args]
 . linuxsetup.sh -s 
 ```
 エディタのインストール \
 引数にエディタ名を指定することで簡単にインストールが可能 \
-最新のバージョンでインストール
+最新のバージョンでインストール\
 以下で指定したエディタのみインストールが可能
 ```
 . linuxsetup.sh --pycharm --vscode --atom --vim 
