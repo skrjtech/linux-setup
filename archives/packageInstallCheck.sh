@@ -1,10 +1,19 @@
 #!/bin/bash
-packageCheck() {
+function packageCheck() {
 	package=(`ls /usr/share`)
-	if printf '%s\n' "${package[@]}" | grep -qx $0; then
+	if printf '%s\n' "${package[@]}" | grep -qx $1; then
 		echo "true"
 	else
 		echo "false"
 	fi
 }
-packageCheck $1
+"""
+# Test 
+Check=`packageCheck arg`
+Check=`packageCheck nano`
+if $Check; then
+    True
+else
+    False
+fi
+"""
