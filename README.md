@@ -26,5 +26,9 @@ cd linuxsetup-beginner
 ```
 . linuxsetup.sh --pycharm --vscode --atom --vim 
 ```
+必要なツールのインストール
+```
+. linuxsetup.sh --docker --anaconda3 etc...
+```
 # Raspberry pi Setup
 
