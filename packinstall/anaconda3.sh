@@ -6,6 +6,6 @@ sudo bash anaconda3.sh -b -p /opt/anaconda3
 # sudo ln -s /opt/anaconda3/bin/conda /usr/bin/conda
 sudo ln -s /opt/anaconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 echo ". /opt/anaconda3/etc/profile.d/conda.sh" >> ~/.bashrc
-sudo find /opt/conda/ -follow -type f -name '*.a' -delete
-sudo find /opt/conda/ -follow -type f -name '*.js.map' -delete
+sudo find /opt/anaconda3/ -follow -type f -name '*.a' -delete
+sudo find /opt/anaconda3/ -follow -type f -name '*.js.map' -delete
 rm -f anacodna3.sh
