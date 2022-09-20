@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DEBIAN_FRONTEND=noninteractive
+
 set -x
 
 sudo apt -y update 
@@ -14,59 +16,59 @@ sudo apt-get -y dist-upgrade
 sudo apt-get -y autoremove
 sudo apt-get -y autoclean
 
-sudo apt install -y git
-sudo apt install -y vim
-sudo apt install -y gdb
-sudo apt install -y make
-sudo apt install -y nano
-sudo apt install -y wget
-sudo apt install -y curl
-sudo apt install -y htop
-sudo apt install -y tmux
-sudo apt install -y bzip2
-sudo apt install -y cmake
-sudo apt install -y xterm
-sudo apt install -y gnupg
-sudo apt install -y gnupg2
-sudo apt install -y libsm6
-sudo apt install -y procps 
-sudo apt install -y libxi6
-sudo apt install -y locales
-sudo apt install -y gettext
-sudo apt install -y texinfo
-sudo apt install -y valgrind
-sudo apt install -y dbus-x11
-sudo apt install -y libxext6
-sudo apt install -y mercurial 
-sudo apt install -y python3-tk
-sudo apt install -y mesa-utils
-sudo apt install -y subversion
-sudo apt install -y terminator
-sudo apt install -y libssl-dev
-sudo apt install -y gnutls-bin
-sudo apt install -y libbz2-dev
-sudo apt install -y zlib1g-dev
-sudo apt install -y libxfixes3 
-sudo apt install -y libxrandr2 
-sudo apt install -y subversion 
-sudo apt install -y default-jre
-sudo apt install -y default-jdk
-sudo apt install -y lsb-release
-sudo apt install -y libxcursor1
-sudo apt install -y libxdamage1
-sudo apt install -y libxrender1 
-sudo apt install -y libldap2-dev
-sudo apt install -y libglib2.0-0
-sudo apt install -y libxinerama1 
-sudo apt install -y openssh-client 
-sudo apt install -y libxcomposite1
-sudo apt install -y libsqlite3-dev
-sudo apt install -y build-essential
-sudo apt install -y libgl1-mesa-glx
-sudo apt install -y libgl1-mesa-dri
-sudo apt install -y libgnutls28-dev
-sudo apt install -y ca-certificates
-sudo apt install -y libncurses5-dev
-sudo apt install -y software-properties-common
+sudo apt-get install -y --no-install-recommends git
+sudo apt-get install -y --no-install-recommends vim
+sudo apt-get install -y --no-install-recommends gdb
+sudo apt-get install -y --no-install-recommends make
+sudo apt-get install -y --no-install-recommends nano
+sudo apt-get install -y --no-install-recommends wget
+sudo apt-get install -y --no-install-recommends curl
+sudo apt-get install -y --no-install-recommends htop
+sudo apt-get install -y --no-install-recommends tmux
+sudo apt-get install -y --no-install-recommends bzip2
+sudo apt-get install -y --no-install-recommends cmake
+sudo apt-get install -y --no-install-recommends xterm
+sudo apt-get install -y --no-install-recommends gnupg
+sudo apt-get install -y --no-install-recommends gnupg2
+sudo apt-get install -y --no-install-recommends libsm6
+sudo apt-get install -y --no-install-recommends procps 
+sudo apt-get install -y --no-install-recommends libxi6
+sudo apt-get install -y --no-install-recommends locales
+sudo apt-get install -y --no-install-recommends gettext
+sudo apt-get install -y --no-install-recommends texinfo
+sudo apt-get install -y --no-install-recommends valgrind
+sudo apt-get install -y --no-install-recommends dbus-x11
+sudo apt-get install -y --no-install-recommends libxext6
+sudo apt-get install -y --no-install-recommends mercurial 
+sudo apt-get install -y --no-install-recommends python3-tk
+sudo apt-get install -y --no-install-recommends mesa-utils
+sudo apt-get install -y --no-install-recommends subversion
+sudo apt-get install -y --no-install-recommends terminator
+sudo apt-get install -y --no-install-recommends libssl-dev
+sudo apt-get install -y --no-install-recommends gnutls-bin
+sudo apt-get install -y --no-install-recommends libbz2-dev
+sudo apt-get install -y --no-install-recommends zlib1g-dev
+sudo apt-get install -y --no-install-recommends libxfixes3 
+sudo apt-get install -y --no-install-recommends libxrandr2 
+sudo apt-get install -y --no-install-recommends subversion 
+sudo apt-get install -y --no-install-recommends default-jre
+sudo apt-get install -y --no-install-recommends default-jdk
+sudo apt-get install -y --no-install-recommends lsb-release
+sudo apt-get install -y --no-install-recommends libxcursor1
+sudo apt-get install -y --no-install-recommends libxdamage1
+sudo apt-get install -y --no-install-recommends libxrender1 
+sudo apt-get install -y --no-install-recommends libldap2-dev
+sudo apt-get install -y --no-install-recommends libglib2.0-0
+sudo apt-get install -y --no-install-recommends libxinerama1 
+sudo apt-get install -y --no-install-recommends openssh-client 
+sudo apt-get install -y --no-install-recommends libxcomposite1
+sudo apt-get install -y --no-install-recommends libsqlite3-dev
+sudo apt-get install -y --no-install-recommends build-essential
+sudo apt-get install -y --no-install-recommends libgl1-mesa-glx
+sudo apt-get install -y --no-install-recommends libgl1-mesa-dri
+sudo apt-get install -y --no-install-recommends libgnutls28-dev
+sudo apt-get install -y --no-install-recommends ca-certificates
+sudo apt-get install -y --no-install-recommends libncurses5-dev
+sudo apt-get install -y --no-install-recommends software-properties-common
 
 set +x
