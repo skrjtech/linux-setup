@@ -37,7 +37,8 @@ sudo apt-get install -y --no-install-recommends texinfo
 sudo apt-get install -y --no-install-recommends valgrind
 sudo apt-get install -y --no-install-recommends dbus-x11
 sudo apt-get install -y --no-install-recommends libxext6
-sudo apt-get install -y --no-install-recommends mercurial 
+sudo apt-get install -y --no-install-recommends mercurial
+sudo apt-get install -y --no-install-recommends python-pip 
 # sudo apt-get install -y --no-install-recommends python3-tk
 sudo apt-get install -y --no-install-recommends mesa-utils
 sudo apt-get install -y --no-install-recommends subversion
@@ -48,7 +49,8 @@ sudo apt-get install -y --no-install-recommends libbz2-dev
 sudo apt-get install -y --no-install-recommends zlib1g-dev
 sudo apt-get install -y --no-install-recommends libxfixes3 
 sudo apt-get install -y --no-install-recommends libxrandr2 
-sudo apt-get install -y --no-install-recommends subversion 
+sudo apt-get install -y --no-install-recommends subversion
+sudo apt-get install -y --no-install-recommends python3-pip 
 sudo apt-get install -y --no-install-recommends default-jre
 sudo apt-get install -y --no-install-recommends default-jdk
 sudo apt-get install -y --no-install-recommends lsb-release
