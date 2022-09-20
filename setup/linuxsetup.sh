@@ -40,7 +40,7 @@ sudo apt-get install -y --no-install-recommends valgrind
 sudo apt-get install -y --no-install-recommends dbus-x11
 sudo apt-get install -y --no-install-recommends libxext6
 sudo apt-get install -y --no-install-recommends mercurial 
-# sudo apt-get install -y --no-install-recommends python3-tk
+sudo apt-get install -y --no-install-recommends python3-tk
 sudo apt-get install -y --no-install-recommends mesa-utils
 sudo apt-get install -y --no-install-recommends subversion
 sudo apt-get install -y --no-install-recommends terminator
