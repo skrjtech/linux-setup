@@ -2,7 +2,7 @@ FROM debian:latest
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 RUN set -x && apt update && apt -y upgrade
-RUN apt isntall -y  git sudo
+RUN apt install -y git sudo
 
 RUN git clone https://github.com/skrjtech/linuxsetup-beginner.git
 RUN . linuxsetup-beginner/setup/installpkg.sh
@@ -21,5 +21,6 @@ WORKDIR /home/$USER
 RUN chmod -R a+rwx /opt
 RUN . linuxsetup-beginner/packinstall/anaconda3.sh
 RUN . linuxsetup-beginner/editor/vscodeInstall.sh
+RUN rm -rf linuxsetup-beginner
 
 USER $USER
