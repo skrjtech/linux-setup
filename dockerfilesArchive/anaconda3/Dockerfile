@@ -1,5 +1,7 @@
 FROM debian:latest
 
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 RUN set -x && apt update && apt -y upgrade
 RUN apt install -y git sudo
@@ -16,11 +18,16 @@ RUN groupadd -g $GID $GROUPUSER
 RUN useradd -m -s /bin/bash -u $UID -g $GID -G sudo $USER
 RUN echo $USER:$PASSWORD | chpasswd
 RUN echo "$USER   ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-WORKDIR /home/$USER
 
 RUN chmod -R a+rwx /opt
 RUN . linuxsetup-beginner/packinstall/anaconda3.sh
 RUN . linuxsetup-beginner/editor/vscodeInstall.sh
+RUN . linuxsetup-beginner/browser/googlechromeinstall.sh
 RUN rm -rf linuxsetup-beginner
+ENV PATH $PATH:/opt/anaconda3/bin
+RUN conda init bash && \
+    source ~/.bashrc && \
+    conda update -n base -c defaults conda
 
 USER $USER
+WORKDIR /home/$USER
