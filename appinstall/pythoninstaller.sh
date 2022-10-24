@@ -21,6 +21,7 @@ sudo rm -rf /var/lib/apt/lists/*
 wget --no-check-certificate "https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.xz"
 tar xJf "Python-${PYTHON_VERSION}.tar.xz"
 cd "Python-${PYTHON_VERSION}"
+./configure
 make
 sudo make install 
 sudo rm -rf "Python-${PYTHON_VERSION}*"
