@@ -2,7 +2,10 @@
 PYTHON_VERSION=$1
 sudo apt update
 sudo apt install -y wget
-sudo apt install -y tk-dev              \
+sudo apt install -y gcc                 \
+                    make                \
+                    tk-dev              \
+                    dpkg-dev            \
                     uuid-dev            \
                     libdb-dev           \
                     libffi-dev          \
