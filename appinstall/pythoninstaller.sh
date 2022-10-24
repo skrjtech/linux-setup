@@ -1,5 +1,6 @@
 #!/bin/bash
 PYTHON_VERSION=$1
+sudo apt update
 sudo apt install -y wget
 sudo apt install -y tk-dev              \
                     uuid-dev            \
