@@ -1,5 +1,6 @@
 #!/bin/bash
 PYTHON_VERSION=$1
+echo "Python Version: ${PYTHON_VERSION}"
 sudo apt update
 sudo apt install -y wget
 sudo apt install -y gcc                 \
