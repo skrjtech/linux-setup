@@ -22,7 +22,7 @@ tar xJf "Python-${PYTHON_VERSION}.tar.xz"
 cd "Python-${PYTHON_VERSION}"
 make
 sudo make install 
-sudo rm -rf Python-${PYTHON_VERSION}*
+sudo rm -rf "Python-${PYTHON_VERSION}*"
 sudo ln -s /usr/local/bin/pip3 /usr/local/bin/pip
 sudo ln -s /usr/local/bin/python3 /usr/local/bin/python
 # pip upgrade
