@@ -1,8 +1,7 @@
 #!/bin/bash
 PYTHON_VERSION=$1
 sudo apt install -y wget
-sudo apt install -y make                \
-                    tk-dev              \
+sudo apt install -y tk-dev              \
                     uuid-dev            \
                     libdb-dev           \
                     libffi-dev          \
@@ -19,8 +18,8 @@ sudo apt install -y make                \
 sudo rm -rf /var/lib/apt/lists/*
 # Python ホームページ から リンクの取得 https://www.python.org/downloads/
 wget --no-check-certificate "https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.xz"
-tar xJf Python-${PYTHON_VERSION}.tar.xz
-cd Python-${PYTHON_VERSION}
+tar xJf "Python-${PYTHON_VERSION}.tar.xz"
+cd "Python-${PYTHON_VERSION}"
 make
 sudo make install 
 sudo rm -rf Python-${PYTHON_VERSION}*
