@@ -1,7 +1,8 @@
 #!/bin/bash
 PYTHON_VERSION=$1
 sudo apt install -y wget
-sudo apt install -y tk-dev              \
+sudo apt install -y make                \
+                    tk-dev              \
                     uuid-dev            \
                     libdb-dev           \
                     libffi-dev          \
