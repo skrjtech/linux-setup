@@ -1,8 +1,4 @@
 #!/bin/bash
-
-set -x
-
-. ../packagesinstall/_init.sh
 sudo apt-get install -y --no-install-recommends git # ソース管理
 sudo apt-get install -y --no-install-recommends vim # エディター
 sudo apt-get install -y --no-install-recommends gdb # デバッガ：クラッシュやプログラム実行中の内部を調べる為のツール
@@ -59,5 +55,3 @@ sudo apt-get install -y --no-install-recommends libgnutls28-dev
 sudo apt-get install -y --no-install-recommends ca-certificates
 sudo apt-get install -y --no-install-recommends libncurses5-dev
 sudo apt-get install -y --no-install-recommends software-properties-common
-
-set +x
