@@ -100,3 +100,10 @@ https://www.anaconda.com/products/distribution
 bash anaconda3.sh -bfu -p /tmp/anaconda3
 rm -f anaconda3.sh
 ```
+# Python3 Install
+Python3のインストール行う場合
+```
+sudo apt update && sudo apt -y upgrade
+sudo apt install -y python3-pip
+sudo apt install -y build-essential libssl-dev libffi-dev python3-dev
+```
