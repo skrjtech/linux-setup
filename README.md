@@ -1,34 +1,52 @@
-# For Beginner
-初期設定で迷う様々な設定を記録したパック\
-主に自分自身が環境作りの際、毎回記述するコードを記録したサンプル
-* スムーズな開発には、ゴミが入った計算機が必要だ
+# 初心者向け (主に自分用)
+初期設定で迷う様々な設定を記録したパック \
+主に自分自身が環境作りの際、毎回記述するコード記録する
+* スムーズな開発には、ゴミが入った計算機は不要だ
 # Linux Setup
-## First Setup
-OSのインストール後にシステムのアップデートとgitのインストールを行う
+OSのインストール後にシステムのアップデート \
+gitをインストールしてlinux-setup.gitをclone
 ```
-sudo apt update && sudo apt install -y git 
+sudo apt update &&         \
+sudo apt -y upgrade &&     \
+sudo apt-get update &&     \
+sudo apt-get -y upgrade && \
+sudo apt install -y git && \
+git clone https://github.com/skrjtech/linux-setup.git
 ```
-githubから初期設定などのスクリプトを落とす
+linux-setup.gitに移動して初期設定のスクリプトを行う
 ```
-git clone https://github.com/skrjtech/linuxsetup-beginner.git
-cd linuxsetup-beginner
+cd linux-setup
+. setup/setup.sh
 ```
-単純なセットアップ\
--s 指定でそれぞれのアップデートを行う
+# NVIDIA CUDA Toolkit Archive
+Cuda Install \
+下記のlinkに飛んで, Toolkit Archiveの一覧から欲しいVersionのCudaを選択
 ```
-# . linuxsetup.sh [args]
-. linuxsetup.sh -s 
+https://developer.nvidia.com/cuda-toolkit-archive
 ```
-エディタのインストール \
-引数にエディタ名を指定することで簡単にインストールが可能 \
-最新のバージョンでインストール\
-以下で指定したエディタのみインストールが可能
+Operating System: Linux \
+Architecture: x86_64 \
+Distribution: ubuntu \
+Version: 18.04 | 20.04 | 22.04 | etc... \
+Installer Type: dev [local] \
+# 日本配列・英語配列キーボード設定
+## 日本語配列
+Mozcをインストールして
 ```
-. linuxsetup.sh --pycharm --vscode --atom --vim 
+sudo apt install -y ibus-mozc
+sudo reboot
 ```
-必要なツールのインストール
+設定からRegion & Languageの言語選択でMozcを追加 \
+ひらがな<=>ローマ字変換にはSuper+Spaceキーで切り替る \
+切り替え方の変更は可能 (後で調べる)
+## 英語配列
+fcitx-mozcをインストール
 ```
-. linuxsetup.sh --docker --anaconda3 etc...
+sudo apt install -y fcitx-mozc
 ```
-# Raspberry pi Setup
-
+Keyboard input method system: iBus -> Fcitx に切り替え \
+設定 -> Region & Language -> Manage Installed Language -> Keyboard input method system -> Fcitx \
+再起動をして設定を反映
+```
+sudo reboot
+```
