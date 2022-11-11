@@ -20,7 +20,7 @@ cd linux-setup
 ```
 # NVIDIA CUDA Toolkit Archive
 Cuda Install \
-link先に飛んで, Toolkit Archiveの一覧から欲しいVersionのCudaを選択
+link先に飛んで, Toolkit Archiveの一覧から欲しいVersionのCudaを選択 \
 https://developer.nvidia.com/cuda-toolkit-archive \
 Operating System: Linux \
 Architecture: x86_64 \
@@ -78,7 +78,7 @@ sudo dpkg -i xxx.deb
 sudo apt install -f
 ```
 # vscode Install
-link先から使用しているArchitectureのファイルをdownload
+link先から使用しているArchitectureのファイルをdownload \
 https://code.visualstudio.com/download \
 Deb Installからインストール方法を確認してインストール
 # Google Chrome Download
@@ -93,15 +93,15 @@ sudo apt update
 sudo apt install -y google-chrome-stable
 ```
 # Anaconda3 Install
-link先から最新のファイルをdownload
-https://www.anaconda.com/products/distribution
+link先から最新のファイルをdownload \
+https://www.anaconda.com/products/distribution \
 特定の場所にインストール
 ```
 bash anaconda3.sh -bfu -p /tmp/anaconda3
 rm -f anaconda3.sh
 ```
 # Python3 Install
-Python3のインストール行う場合
+Python3のインストール方法
 ```
 sudo apt update && sudo apt -y upgrade
 sudo apt install -y python3-pip
