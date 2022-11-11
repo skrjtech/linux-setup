@@ -107,3 +107,65 @@ sudo apt update && sudo apt -y upgrade
 sudo apt install -y python3-pip
 sudo apt install -y build-essential libssl-dev libffi-dev python3-dev
 ```
+# Docker Install 
+link先を参照してインストール法を確認\
+https://docs.docker.com/engine/install/ \
+Ubuntuの場合 \
+step1. インストール済みのDockerを削除 
+```
+sudo apt install gnome-terminal
+sudo apt remove docker-desktop
+rm -r $HOME/.docker/desktop
+sudo rm /usr/local/bin/com.docker.cli
+sudo apt purge docker-desktop
+```
+step2. Dockerインストールに必要なリポジトリを更新とインストール
+```
+sudo apt-get update
+sudo apt-get install ca-certificates    \
+                     curl               \
+                     gnupg              \
+                     lsb-release
+```
+step3. GPG keyの追加
+```
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+step4. Docker install
+```
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+```
+step5. 権限の付与
+```
+sudo usermod -aG docker ${USER}
+```
+step6. 再起動
+```
+sudo reboot
+```
+# Docker Compose Install 
+docker composeのインストール
+```
+sudo apt-get update
+sudo apt-get install docker-compose-plugin
+```
+Version Check
+```
+docker compose version
+```
+
+# Achitecture Check
+```
+echo $(dpkg --print-architecture)
+```
+out: amd64
+
+# Release Check
+```
+echo $(lsb_release -cs)
+```
+out: focal <- 20.04の場合
