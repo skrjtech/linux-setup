@@ -38,7 +38,7 @@ sudo apt-get update
 sudo apt-get -y install cuda
 ```
 適当な名前のスクリプトファイルに保存して実行
-# 日本配列・英語配列キーボード設定
+# キーボードの日本配列/英語配列の設定
 ## 日本語配列
 Mozcをインストールして
 ```
@@ -80,7 +80,11 @@ sudo apt install -f
 # vscode Install
 link先から使用しているArchitectureのファイルをdownload \
 https://code.visualstudio.com/download \
-Deb Installからインストール方法を確認してインストール
+Deb Installからインストール方法を確認してインストール \
+下記のコマンドで即インストール
+```
+. installer/vscode.sh
+```
 # Google Chrome Download
 Architectureを確認してブラウザをインストール \
 [arch=amd64] amd64を使用しているものに変更
@@ -91,6 +95,10 @@ wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key ad
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 sudo apt update
 sudo apt install -y google-chrome-stable
+```
+別な方法で即インストール
+```
+. installer/googlechrome.sh
 ```
 # Anaconda3 Install
 link先から最新のファイルをdownload \
