@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo apt update && sudo apt -y upgrade
 # java
 sudo apt install -y default-jre
 sudo apt install -y default-jdk

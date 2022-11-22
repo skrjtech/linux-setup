@@ -2,10 +2,10 @@
 sudo apt-get install -y --no-install-recommends git # ソース管理
 sudo apt-get install -y --no-install-recommends vim # エディター
 sudo apt-get install -y --no-install-recommends gdb # デバッガ：クラッシュやプログラム実行中の内部を調べる為のツール
-sudo apt-get install -y --no-install-recommends make #  プログラム群を管理するための GNU make ユーティリティ
+sudo apt-get install -y --no-install-recommends make # プログラム群を管理するための GNU make ユーティリティ
 sudo apt-get install -y --no-install-recommends nano # エディター
-sudo apt-get install -y --no-install-recommends wget
-sudo apt-get install -y --no-install-recommends curl
+sudo apt-get install -y --no-install-recommends wget # GNU Wget ウェブサーバからコンテンツを取得するダウンローダ
+sudo apt-get install -y --no-install-recommends curl # cURLは、さまざまなプロトコルを用いてデータを転送するライブラリとコマンドラインツールを提供するプロジェクト
 sudo apt-get install -y --no-install-recommends htop # タスクマネージャ
 sudo apt-get install -y --no-install-recommends tmux # ターミナルマルチプレクサ 
 sudo apt-get install -y --no-install-recommends bzip2 # データ圧縮プログラム
@@ -21,10 +21,10 @@ sudo apt-get install -y --no-install-recommends gettext # 国際化と地域化�
 sudo apt-get install -y --no-install-recommends texinfo # フリーなコンピュータ・プログラム であり、一式のソースコードから複数の形式で文書を生成する
 sudo apt-get install -y --no-install-recommends valgrind # メモリデバッグや、メモリリークの検出、スレッドエラーの検出、プロファイリングなどを行うための仮想機械を利用したソフトウェア開発ツール
 sudo apt-get install -y --no-install-recommends dbus-x11 # ディレクトリのコピーの進捗状況を確認
-sudo apt-get install -y --no-install-recommends libxext6
+sudo apt-get install -y --no-install-recommends libxext6 # X11 拡張系ライブラリ (その他の情報不明)
 sudo apt-get install -y --no-install-recommends mercurial # クロスプラットフォームのバージョン管理システムソフトウェア
-sudo apt-get install -y --no-install-recommends python-pip 
-# sudo apt-get install -y --no-install-recommends python3-tk
+sudo apt-get install -y --no-install-recommends python-pip # python2系 pip
+sudo apt-get install -y --no-install-recommends python3-tk # python3 Tkinter ツール
 sudo apt-get install -y --no-install-recommends mesa-utils
 sudo apt-get install -y --no-install-recommends subversion
 sudo apt-get install -y --no-install-recommends terminator
@@ -35,7 +35,7 @@ sudo apt-get install -y --no-install-recommends zlib1g-dev # 圧縮アルゴリ�
 sudo apt-get install -y --no-install-recommends libxfixes3 # X Window System クライアントに X プロトコルの 'XFIXES' 拡張へ のインターフェース
 sudo apt-get install -y --no-install-recommends libxrandr2
 sudo apt-get install -y --no-install-recommends subversion
-sudo apt-get install -y --no-install-recommends python3-pip 
+sudo apt-get install -y --no-install-recommends python3-pip  # python3系 pip
 sudo apt-get install -y --no-install-recommends default-jre
 sudo apt-get install -y --no-install-recommends default-jdk
 sudo apt-get install -y --no-install-recommends lsb-release
