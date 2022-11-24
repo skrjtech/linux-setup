@@ -60,7 +60,7 @@ Keyboard input method system: iBus -> Fcitx に切り替え \
 ```
 sudo reboot
 ```
-# Deb Install Patter
+# Deb Install Pattern
 ## Pattern: apt  
 ```
 sudo apt install xxx.deb
