@@ -39,20 +39,40 @@ sudo apt-get -y install cuda
 ```
 適当な名前のスクリプトファイルに保存して実行
 # キーボードの日本配列/英語配列の設定
+OSインストール後にキーボード設定を行う為に
+
+    Setting -> Region & Language -> Manage Installed Language
+
+から必要な言語インストールを行う.   
+Manage Installed Languageを開くと自動的にセットアップやインストールが始まる.  
+完了後に扱うキー配列のパッケージをインストール [Mozc(日本語配列)/Fcitx(英語配列)]
+
 ## 日本語配列
 Mozcをインストールして
 ```
 sudo apt install -y ibus-mozc
+```
+再起動をして設定を反映
+```
 sudo reboot
 ```
-Setting -> Region & Language -> Manage Installed Language インストールを行う \
 インストールの完了後に言語選択からMozcを追加 \
 ひらがな<=>ローマ字変換にはSuper+Spaceキーで切り替る \
 切り替え方の変更は可能 (後で調べる)
-## 英語配列
+## 英語配列 (1) fcitx-mozc
 fcitx-mozcをインストール
 ```
 sudo apt install -y fcitx-mozc
+```
+Keyboard input method system: iBus -> Fcitx に切り替え \
+設定 -> Region & Language -> Manage Installed Language -> Keyboard input method system -> Fcitx \
+再起動をして設定を反映
+```
+sudo reboot
+```
+## 英語配列 (2) fcitx5-mozc
+```
+sudo apt install -y fcitx5-mozc
 ```
 Keyboard input method system: iBus -> Fcitx に切り替え \
 設定 -> Region & Language -> Manage Installed Language -> Keyboard input method system -> Fcitx \
