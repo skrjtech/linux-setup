@@ -13,10 +13,9 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 sudo apt-get update
 if [ $# == 1 ]; then
-    sudo apt-get install -y docker-ce docker-ce-cli
+    sudo apt-get install -y docker-ce=$1 docker-ce-cli=$1 containerd.io docker-compose-plugin
 else
-    sudo apt-get install -y docker-ce=$1 docker-ce-cli=$1
+    sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 fi
-sudo apt-get install -y containerd.io docker-compose-plugin
 sudo usermod -aG docker ${USER}
 su - ${USER}
