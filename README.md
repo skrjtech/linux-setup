@@ -135,6 +135,39 @@ sudo apt update && sudo apt -y upgrade
 sudo apt install -y python3-pip
 sudo apt install -y build-essential libssl-dev libffi-dev python3-dev
 ```
+# Python3 Install (Source)
+ソースからインストールする方法
+```
+sudo apt install -y build-essential  \
+                     tk-dev          \
+                     uuid-dev        \
+                     libdb-dev       \
+                     libssl-dev      \
+                     zlib1g-dev      \
+                     libbz2-dev      \
+                     libffi-dev      \
+                     libgdbm-dev     \
+                     liblzma-dev     \
+                     libsqlite3-dev  \
+                     libreadline-dev \
+                     libncursesw5-dev
+```
+```
+PYTHON_VERSION=3.10.8
+```
+```
+curl -O https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.xz 
+tar xJf Python-$PYTHON_VERSION.tar.xz 
+rm -rf Python-$PYTHON_VERSION.tar.xz 
+cd Python-$PYTHON_VERSION 
+./configure --prefix=/usr/local/python$PYTHON_VERSION --with-ensurepip 
+make 
+make install 
+cd ../ 
+rm -rf Python-$PYTHON_VERSION 
+ln -s /usr/local/python${PYTHON_VERSION}/bin/python3 /usr/bin/python 
+ln -s /usr/local/python${PYTHON_VERSION}/bin/pip3 /usr/bin/pip 
+```
 # Docker Install 
 link先を参照してインストール法を確認\
 https://docs.docker.com/engine/install/ \
