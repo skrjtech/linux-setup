@@ -4,7 +4,7 @@ SHELL [ "/bin/bash", "-c" ]
 RUN apt update && apt -y upgrade
 RUN apt-get update && apt-get -u upgrade
 RUN apt install -y sudo git curl wget
-RUN apt install -y make cmake xz-utils fonts-takao zlib1g-dev
+RUN apt install -y make cmake xz-utils fonts-takao zlib1g-dev zip
 # Python 
 RUN DEBIAN_FRONTEND=noninteractive apt install -y build-essential  \
                                                     tk-dev          \
@@ -33,6 +33,8 @@ RUN set -x \
     && ln -s /usr/local/python/bin/python3 /usr/bin/python \
     && ln -s /usr/local/python/bin/pip3 /usr/bin/pip \
     && set +x
+ENV PATH /usr/local/python/bin:$PATH
+RUN echo "export PYTHONDONTWRITEBYTECODE=1" >> ~/.bashrc
 # pip update
 RUN python -m pip install --upgrade pip setuptools
 # YOLACT 
@@ -40,11 +42,9 @@ RUN git clone https://github.com/dbolya/yolact.git
 RUN pip install torch==1.0.1 torchvision -f https://download.pytorch.org/whl/torch_stable.html
 # これ入れないとopencvが正常に作動しない
 RUN apt install -y libgl1-mesa-dev
-# 画像処理機能
-RUN python -m pip install opencv-python opencv-contrib-python
-# opencv camera 用
+# 画像処理機能 opencv camera 用
+RUN python -m pip install cython pycocotools pillow==6.2.2 PyQt5 matplotlib opencv-python opencv-contrib-python
 RUN echo 'export QT_X11_NO_MITSHM=1' >> ~/.bashrc
-RUN python -m pip install pycocotools pillow==6.2.2 PyQt5 matplotlib
 COPY ./yolactWeightsDownload.sh /
 RUN . yolactWeightsDownload.sh
 CMD [ "/bin/bash" ]

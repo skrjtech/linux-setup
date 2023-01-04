@@ -1,7 +1,10 @@
 version: '3.9'
 services:
   test:
-    image: skrjtech/yolact:latest
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    image: skrjtech/yolact:amd64-10.0-cudnn7-devel-ubuntu18.04-python3.7.16
     container_name: yolact_test
     hostname: yolact
     tty: true

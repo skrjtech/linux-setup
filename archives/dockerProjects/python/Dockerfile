@@ -1,4 +1,5 @@
-FROM ubuntu:22.04
+ARG IMAGE_TAG
+FROM $IMAGE_TAG
 
 # Update
 RUN apt update && apt -y upgrade
@@ -36,6 +37,8 @@ RUN set -x                                                                      
     && ln -s /usr/local/python/bin/python3 /usr/bin/python                                          \
     && ln -s /usr/local/python/bin/pip3 /usr/bin/pip                                                \
     && set +x
+
+ENV PATH /usr/local/python/bin:$PATH
 
 # pip update
 RUN python -m pip install --upgrade pip setuptools

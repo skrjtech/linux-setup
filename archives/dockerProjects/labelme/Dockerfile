@@ -1,5 +1,5 @@
-ARG PYTHON_VERSION
-FROM skrjtech/debian_python:${PYTHON_VERSION}
+ARG IMAGE_TAG
+FROM $IMAGE_TAG
 # Update
 RUN apt update && apt -y upgrade
 RUN apt-get update && apt-get -u upgrade
