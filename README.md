@@ -242,6 +242,26 @@ At this point, a working setup can be tested by running a base CUDA container:
 ```
 sudo docker run --rm --gpus all nvidia/cuda:11.6.2-base-ubuntu20.04 nvidia-smi
 ```
+# Raspberry Pi Docker And Docker Compose Install 
+```
+sudo apt update && sudo apt upgrade
+curl -sSL https://get.docker.com | sh
+sudo usermod -aG docker ${USER}
+LATEST=v2.15.0
+URL=https://github.com/docker/compose/releases/download/$LATEST/docker-compose-linux-aarch64
+OUTPUT_PATH=/usr/local/lib/docker/cli-plugins/docker-compose
+sudo curl -SL $URL -o $OUTPUT_PATH
+```
+# Raspberry Pi IP 固定
+```
+sudo nano /etc/dhcpcd.conf
+```
+interface eth0
+static ip_address=192.168.XXX.XXX/24
+static ip6_address=XX:XX:XX:XX:XX:XX:XX:XX/64
+static routers=192.168.XXX.XXX
+static domain_name_servers=192.168.XXX.XXX XXX.XXX.XXX.XXX 
+
 # Achitecture Check
 ```
 echo $(dpkg --print-architecture)
