@@ -15,5 +15,4 @@ RUN set -x \
 RUN rm -f /etc/squid/squid.conf
 COPY squid.conf /etc/squid/squid.conf
 COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT [ "entrypoint.sh" ]
-CMD [ "/bin/bash" ]
+CMD [ "/bin/bash", "-c", "/entrypoint.sh" ]
