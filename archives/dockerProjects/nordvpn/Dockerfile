@@ -12,5 +12,5 @@ RUN set -x \
     && rm /tmp/nordrepo.deb \
     && apt-get clean \
     && set +x
-ENTRYPOINT /etc/init.d/nordvpn start && sleep 5 
+# ENTRYPOINT /etc/init.d/nordvpn start && sleep 5 
 CMD [ "/bin/bash" ]
