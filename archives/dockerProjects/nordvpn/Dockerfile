@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 RUN apt update && apt -y upgrade
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y wget iputils-ping curl squid vim
+RUN apt-get install -y wget iputils-ping curl squid vim tmux
 RUN set -x \
     && wget -O /tmp/nordrepo.deb https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb \
     && apt-get install -y /tmp/nordrepo.deb \
