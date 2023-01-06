@@ -12,5 +12,8 @@ RUN set -x \
     && rm /tmp/nordrepo.deb \
     && apt-get clean \
     && set +x
-# ENTRYPOINT /etc/init.d/nordvpn start && sleep 5 
+RUN rm -f /etc/squid/squid.conf
+COPY squid.conf /etc/squid/squid.conf
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT [ "entrypoint.sh" ]
 CMD [ "/bin/bash" ]
