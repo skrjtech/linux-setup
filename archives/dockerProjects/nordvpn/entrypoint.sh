@@ -3,6 +3,7 @@
 # NORDTOKEN
 # LOCALIP
 
+# NORDVPN START
 /etc/init.d/nordvpn start
 sleep 5
 
@@ -22,6 +23,5 @@ sed -ie "s/WLAN0IP/${IP}/g" /etc/squid/squid.conf
 IP=$(ip -4 a show nordlynx | grep -oP '(?<=inet\s)\d+(\.\d+){3}\/(.\d+)' | sed -e 's/\//\\\//')
 sed -ie "s/NORDVPNIP/${IP}/g" /etc/squid/squid.conf
 
-# Reload And Restart
-# /etc/init.d/squid reload && /etc/init.d/squid restart
+# SQUID START
 /etc/init.d/squid start
