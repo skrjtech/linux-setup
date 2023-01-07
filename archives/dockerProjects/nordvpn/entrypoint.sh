@@ -5,8 +5,6 @@
 
 /etc/init.d/nordvpn start
 sleep 5
-/etc/init.d/squid start
-sleep 5
 
 nordvpn login --token $NORDVPN_TOKEN
 nordvpn whitelist add subnet $(ip -4 a show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}\/(.\d+)')
@@ -25,4 +23,5 @@ IP=$(ip -4 a show nordlynx | grep -oP '(?<=inet\s)\d+(\.\d+){3}\/(.\d+)' | sed -
 sed -ie "s/NORDVPNIP/${IP}/g" /etc/squid/squid.conf
 
 # Reload And Restart
-/etc/init.d/squid reload && /etc/init.d/squid restart
+# /etc/init.d/squid reload && /etc/init.d/squid restart
+/etc/init.d/squid start
