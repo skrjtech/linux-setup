@@ -4,6 +4,7 @@ FROM $IMAGE_TAG
 # Update
 RUN apt update && apt -y upgrade
 RUN apt-get update && apt-get -u upgrade
+RUN apt-get install -y chromium
 
 # local language
 RUN apt-get update                                  \
@@ -21,10 +22,7 @@ RUN python -m pip install requests          \
 
 # 画像処理用
 RUN apt install -y ffmpeg
-RUN set -x                                                      \
-    && git clone https://github.com/skrjtech/linux-setup.git    \
-    && . linux-setup/installer/googlechrome.sh                  \
-    && rm -rf linux-setup                                       \
-    && set +x
+RUN mkdir -p /root/.local/share/pyppeteer/local-chromium/588429/chrome-linux
+RUN ln -s /usr/bin/chromium /root/.local/share/pyppeteer/local-chromium/588429/chrome-linux/chrome
 
 CMD [ "/bin/bash" ]
