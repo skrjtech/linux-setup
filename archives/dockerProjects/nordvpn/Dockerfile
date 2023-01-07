@@ -16,5 +16,5 @@ RUN rm -f /etc/squid/squid.conf
 COPY squid.conf /etc/squid/squid.conf
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
-
+ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "/bin/bash" ]
