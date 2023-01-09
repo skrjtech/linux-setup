@@ -39,6 +39,7 @@ RUN set -x                                                                      
     && set +x
 
 ENV PATH /usr/local/python/bin:$PATH
+RUN echo "export PYTHONDONTWRITEBYTECODE=1" >> ~/.bashrc
 
 # pip update
 RUN python -m pip install --upgrade pip setuptools
