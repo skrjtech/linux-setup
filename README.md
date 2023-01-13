@@ -278,3 +278,19 @@ out: amd64
 echo $(lsb_release -cs)
 ```
 out: focal <- 20.04の場合
+
+# Linux 起動時に起こる現象
+## GRUBの画面が起動される時の対処法
+lsから対象のブートを探索
+```
+ls
+```
+output:
+```
+(hd*), (hd*,gpt*)
+```
+起動するOSをセット
+```
+grub: set prefix=(hd*,*)/boot/grub
+grub: normal
+```
