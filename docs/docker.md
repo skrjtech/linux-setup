@@ -4,6 +4,7 @@
 ### debianの場合
 ```
 FROM debian:latest
+
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get install -y locales
 RUN locale-gen ja-JP.UTF-8
@@ -30,4 +31,14 @@ RUN locale-gen ja_JP.UTF-8
 ENV LANG=ja_JP.UTF-8
 ENV LC_ALL=ja_JP.UTF-8
 ```
-## タイムゾーン
+## タイムゾーン 設定
+```
+ENV TZ Asia/Tokyo
+```
+## GoogleChrome 起動時に必要な特権
+コンテナを起動しようとした時に下記のエラーが起きたら
+Failed to move to new namespace: PID namespaces supported, Network namespace supported, but failed: errno = Operation not permitted
+コンテナに特権を付与することで解決 (root以外のユーザー)
+```
+docker run --privaleged -v DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:rw <image:tag>
+```
