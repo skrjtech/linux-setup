@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  mkuser:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - IMAGE_TAG=$IMAGE_TAG
+    image: $IMAGE_NAME
+    
