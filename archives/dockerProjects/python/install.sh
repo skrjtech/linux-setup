@@ -1,5 +1,5 @@
 #!/bin/bash
-IMAGEOS=$1
+IMAGEOS=debian
 PYTHON_VERSIONS=(
     3.11.1
     3.10.9
