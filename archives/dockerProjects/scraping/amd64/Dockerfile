@@ -19,6 +19,8 @@ ENV LANG=ja_JP.UTF-8
 ENV LANGUAGE=ja_JP:jp
 ENV LC_ALL=ja_JP.UTF-8
 
+ENV PATH /usr/local/python/bin:$PATH
+
 # Scraping
 RUN python -m pip install requests \
                           selenium \
@@ -27,7 +29,7 @@ RUN python -m pip install requests \
                           webdriver-manager
 
 # Google Chrome Install
-RUN git clone https://github.com/linux-setup.git
+RUN git clone https://github.com/skrjtech/linux-setup.git
 RUN . linux-setup/installer/googlechrome.sh
 RUN rm -rf linux-setup
 
