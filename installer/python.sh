@@ -20,4 +20,4 @@ echo "export PATH=${PATH}" >> ~/.bashrc
 echo 'export PYTHONDONTWRITEBYTECODE=1' >> ~/.bashrc
 source ~/.bashrc
 # PIP UPDATE
-python -m pip install --upgrade pip setuptools
+python3 -m pip3 install --upgrade pip setuptools
