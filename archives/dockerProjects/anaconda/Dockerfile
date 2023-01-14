@@ -34,7 +34,7 @@ RUN apt install -y sudo git
 # ENV PATH /opt/anaconda3/envs/${CONDA_DEFAULT_ENV}/bin:$PATH
 
 ARG ANACONDA3_VERSION 
-RUN git clone https://github.com/linux-setup.git && \
+RUN git clone https://github.com/skrjtech/linux-setup.git && \
     . linux-setup/installer/anaconda3.sh $ANACONDA3_VERSION && \
     rm -rf linux-setup
 
