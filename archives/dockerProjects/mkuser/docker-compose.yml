@@ -5,6 +5,11 @@ services:
       context: .
       dockerfile: ./Dockerfile
       args:
-        - IMAGE_TAG=$IMAGE_TAG
+        - IMAGE_TAG
+        - USERNAME=$USER
+        - GROUPNAME=$USER
+        - PASSWORD=$USER
+        - UID=1000
+        - GID=1000
     image: $IMAGE_NAME
     

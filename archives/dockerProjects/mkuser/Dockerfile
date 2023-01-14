@@ -1,22 +1,20 @@
-ARG IMAGE_TAG
-FROM $IMAGE_TAG
+FROM debian:latest
 
 SHELL [ "/bin/bash", "-c" ]
 
-ARG USERNAME=user
-ARG GROUPNAME=user
-ARG UID=1000
-ARG GID=1000
-ARG PASSWORD=user
+RUN apt update && apt -y upgrade
+RUN apt install -y sudo
 
-RUN set -x \
-    && groupadd -g $GID $GROUPNAME \
-    && useradd -m -s /bin/bash -u $UID -g $GID -G sudo $USERNAME \
-    && echo $USERNAME:$PASSWORD | chpasswd \
-    && echo "$USERNAME   ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
-    && set +x
+ENV USERNAME=main
+RUN useradd -m $USERNAME && echo "$USERNAME:$USERNAME" | chpasswd && \
+    usermod --shell /bin/bash $USERNAME && \
+    usermod -aG sudo $USERNAME && \
+    echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/$USERNAME && \
+    chmod 0440 /etc/sudoers.d/$USERNAME && \
+    # Replace 1000 with your user/group id
+    usermod  --uid 1000 $USERNAME && groupmod --gid 1000 $USERNAME
 
 USER $USERNAME
 WORKDIR /home/$USERNAME
 
-CMD [ "/bin/bash", "-c" ]
+CMD [ "/bin/bash"]

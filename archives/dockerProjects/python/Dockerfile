@@ -34,8 +34,8 @@ RUN set -x                                                                      
     && make install                                                                                 \
     && cd /                                                                                         \
     && rm -rf Python-$PYTHON_VERSION                                                                \
-    && ln -s /usr/local/python/bin/python3 /usr/bin/python                                          \
-    && ln -s /usr/local/python/bin/pip3 /usr/bin/pip                                                \
+    && ln -s /usr/local/python/bin/python3 /usr/local/python/bin/python                             \
+    && ln -s /usr/local/python/bin/pip3 /usr/local/python/bin/pip                                   \
     && set +x
 
 ENV PATH /usr/local/python/bin:$PATH
