@@ -16,8 +16,7 @@ ENV LANG=ja_JP.UTF-8
 ENV LANGUAGE=ja_JP:jp
 ENV LC_ALL=ja_JP.UTF-8
 
-RUN source ~/.bashrc
-RUN echo $PATH
+ENV PATH /usr/local/python/bin:$PATH
 
 # Scraping
 RUN python -m pip install requests \
