@@ -6,12 +6,14 @@ SHELL [ "/bin/bash", "-c" ]
 RUN apt update && apt -y upgrade
 RUN apt-get update && apt-get -u upgrade
 RUN apt install -y sudo git curl wget
-RUN apt install -y make cmake xz-utils zlib1g-dev zip
+RUN apt install -y xz-utils zlib1g-dev zip
 
 # Python Install
 ARG PYTHON_VERSION=3.7.16
 RUN git clone https://github.com/skrjtech/linux-setup.git
-RUN . linux-setup/installer/python.sh $PYTHON_VERSION
+RUN sed -i 's/sudo apt/apt/g' linux-setup/installer/python.sh
+RUN cat linux-setup/installer/python.sh
+RUN DEBIAN_FRONTEND=noninteractive . linux-setup/installer/python.sh $PYTHON_VERSION
 RUN rm -rf linux-setup
 ENV PATH /usr/local/python/bin:$PATH
 
