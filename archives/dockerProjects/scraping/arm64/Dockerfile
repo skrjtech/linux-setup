@@ -16,6 +16,7 @@ ENV LANG=ja_JP.UTF-8
 ENV LANGUAGE=ja_JP:jp
 ENV LC_ALL=ja_JP.UTF-8
 
+RUN source ~/.bashrc
 RUN echo $PATH
 
 # Scraping
