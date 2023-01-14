@@ -5,6 +5,14 @@ SHELL [ "/bin/bash", "-c" ]
 RUN apt update && apt -y upgrade
 RUN apt install -y sudo
 
+RUN apt-get install -y locales
+RUN locale-gen ja-JP.UTF-8
+RUN localedef -f UTF-8 -i ja_JP ja_JP
+
+ENV LANG=ja_JP.UTF-8
+ENV LANGUAGE=ja_JP:jp
+ENV LC_ALL=ja_JP.UTF-8
+
 ENV USERNAME=main
 RUN useradd -m $USERNAME && echo "$USERNAME:$USERNAME" | chpasswd && \
     usermod --shell /bin/bash $USERNAME && \
