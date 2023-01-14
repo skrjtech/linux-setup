@@ -1,4 +1,5 @@
 #!/bin/bash
+IMAGEOS=$1
 PYTHON_VERSIONS=(
     3.11.1
     3.10.9
@@ -9,7 +10,8 @@ PYTHON_VERSIONS=(
 )
 for ver in ${PYTHON_VERSIONS[@]}
 do  
-    image_tag=skrjtech/python:$(lsb_release -is)$(lsb_release -rs)-python$ver
-    docker built -t $image_tag . --build-arg PYTHON_VERSION=$ver
+    image_tag=skrjtech/python:$IMAGEOS-python$ver
+    docker built -t $image_tag . --build-arg IMAGE_TAG=$IMAGEOS:latest --build-arg PYTHON_VERSION=$ver
     docker push $image_tag
+    # echo $image_tag
 done
