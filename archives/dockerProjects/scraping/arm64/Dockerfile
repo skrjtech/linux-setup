@@ -16,6 +16,8 @@ ENV LANG=ja_JP.UTF-8
 ENV LANGUAGE=ja_JP:jp
 ENV LC_ALL=ja_JP.UTF-8
 
+RUN echo $PATH
+
 # Scraping
 RUN python -m pip install requests \
                           selenium \
