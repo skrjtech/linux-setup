@@ -44,6 +44,7 @@ docker run --privileged -v DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:rw 
 ```
 ## Dockerでスクレイピング
 GoogleChrome/Chromiumを使用するときはメモリシェアするべし
+docker run --shm-size 1g
 ## リモートディスプレイ
 (Main PC) <---> ( RaspberryPi <-> docker ) <---> (Container Display)
 ```
