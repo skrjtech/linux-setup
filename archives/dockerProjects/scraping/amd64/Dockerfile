@@ -7,6 +7,9 @@ SHELL [ "/bin/bash", "-c" ]
 RUN apt update && apt -y upgrade
 RUN apt-get update && apt-get -u upgrade
 
+# 文字化け対策
+RUN apt install -y fonts-takao
+
 # Language 
 RUN apt-get install -y locales
 RUN locale-gen ja-JP.UTF-8

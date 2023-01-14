@@ -7,6 +7,9 @@ SHELL [ "/bin/bash", "-c" ]
 RUN apt update && apt -y upgrade
 RUN apt-get update && apt-get -u upgrade
 
+# 文字化け対策
+RUN apt install -y fonts-takao
+
 # Language 
 RUN apt-get install -y locales
 RUN locale-gen ja-JP.UTF-8
@@ -27,6 +30,7 @@ RUN python -m pip install requests \
 
 # 画像処理用
 RUN apt install -y ffmpeg
+
 # Chromium And Driver
 RUN apt-get install -y chromium chromium-driver
 

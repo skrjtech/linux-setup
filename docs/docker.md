@@ -42,6 +42,8 @@ Failed to move to new namespace: PID namespaces supported, Network namespace sup
 ```
 docker run --privileged -v DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:rw <image:tag>
 ```
+## Dockerでスクレイピング
+GoogleChrome/Chromiumを使用するときはメモリシェアするべし
 ## リモートディスプレイ
 (Main PC) <---> ( RaspberryPi <-> docker ) <---> (Container Display)
 ```
