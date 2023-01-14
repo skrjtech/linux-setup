@@ -8,7 +8,10 @@ PYCHARM_VERSION=2022.2.1
 # pycahrm
 sudo apt-get install -y curl
 curl -OL https://download.jetbrains.com/python/pycharm-community-$PYCHARM_VERSION.tar.gz
-sudo tar xzf pycharm-community-$PYCHARM_VERSION.tar.gz -C /opt/
+tar xzf pycharm-community-$PYCHARM_VERSION.tar.gz -C /tmp/
 rm pycharm-community-$PYCHARM_VERSION.tar.gz
-sudo mv /opt/pycharm-community-$PYCHARM_VERSION /opt/pycharm
-sudo ln -s /opt/pycharm/bin/pycharm.sh /usr/bin/pycharm
+mv /tmp/pycharm-community-$PYCHARM_VERSION /tmp/pycharm
+ln -s /tmp/pycharm/bin/pycharm.sh /tmp/pycharm/bin/pycharm
+export PATH=/tmp/pycharm/bin:$PATH
+echo "export PATH=${PATH}" >> ~/.bashrc
+

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# PYTHON INSTALL
 PYTHON_VERSION=$1
 sudo apt install -y curl make cmake tk-dev xz-utils uuid-dev libdb-dev libssl-dev zlib1g-dev libbz2-dev libffi-dev \
                     libgdbm-dev liblzma-dev libsqlite3-dev build-essential libreadline-dev libncursesw5-dev
@@ -16,4 +17,6 @@ sudo ln -s /usr/local/python/bin/python3 /usr/local/python/bin/python
 sudo ln -s /usr/local/python/bin/pip3 /usr/local/python/bin/pip
 echo 'export PATH=/usr/local/python/bin:$PATH' >> ~/.bashrc   
 echo 'export PYTHONDONTWRITEBYTECODE=1' >> ~/.bashrc
+source ~/.bashrc
+# PIP UPDATE
 python -m pip install --upgrade pip setuptools

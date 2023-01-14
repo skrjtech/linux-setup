@@ -40,5 +40,20 @@ ENV TZ Asia/Tokyo
 Failed to move to new namespace: PID namespaces supported, Network namespace supported, but failed: errno = Operation not permitted
 コンテナに特権を付与することで解決 (root以外のユーザー)
 ```
-docker run --privaleged -v DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:rw <image:tag>
+docker run --privileged -v DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:rw <image:tag>
+```
+## リモートディスプレイ
+(Main PC) <---> ( RaspberryPi <-> docker ) <---> (Container Display)
+```
+ssh -XY user@(IP:XXX.XXX.XXX.XXX)
+```
+Raspberry Pi
+```
+docker run --rm -it --name sample -e DISPLAY=$DISPLAY --net host -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/root/.Xauthority debian
+```
+Container 
+```
+apt update 
+apt install -y x11-apps
+xeyes
 ```

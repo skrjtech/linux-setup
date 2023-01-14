@@ -7,12 +7,14 @@ SHELL [ "/bin/bash", "-c" ]
 RUN apt update && apt -y upgrade
 RUN apt-get update && apt-get -u upgrade
 
-# local language
-RUN apt-get update \
-    && apt-get install -y locales \
-    && locale-gen ja_JP.UTF-8 \
-    && echo "export LANG=ja_JP.UTF-8" >> ~/.bashrc \
-    && echo "export LANGUAGE=ja_JP:ja" >> ~/.bashrc
+# Language 
+RUN apt-get install -y locales
+RUN locale-gen ja-JP.UTF-8
+RUN localedef -f UTF-8 -i ja_JP ja_JP
+
+ENV LANG=ja_JP.UTF-8
+ENV LANGUAGE=ja_JP:jp
+ENV LC_ALL=ja_JP.UTF-8
 
 # Scraping
 RUN python -m pip install requests \
@@ -21,9 +23,12 @@ RUN python -m pip install requests \
                           beautifulsoup4 \
                           webdriver-manager
 
+# Google Chrome Install
+RUN git clone https://github.com/linux-setup.git
+RUN . linux-setup/installer/googlechrome.sh
+RUN rm -rf linux-setup
+
 # 画像処理用
 RUN apt install -y ffmpeg
-RUN mkdir -p /root/.local/share/pyppeteer/local-chromium/588429/chrome-linux
-RUN ln -s /usr/bin/chromium /root/.local/share/pyppeteer/local-chromium/588429/chrome-linux/chrome
 
 CMD [ "/bin/bash" ]

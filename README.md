@@ -169,6 +169,8 @@ ln -s /usr/local/python${PYTHON_VERSION}/bin/python3 /usr/bin/python
 ln -s /usr/local/python${PYTHON_VERSION}/bin/pip3 /usr/bin/pip 
 ```
 # Docker Install 
+( [Dockerについての追加情報](docs/docker.md) )  
+
 link先を参照してインストール法を確認\
 https://docs.docker.com/engine/install/ \
 Ubuntuの場合 \
