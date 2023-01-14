@@ -59,3 +59,16 @@ apt update
 apt install -y x11-apps
 xeyes
 ```
+## マルチアーキテクチャのプッシュ方法
+マルチアーキテクチャビルドを実行するために新規ビルダーを作成
+```
+docker buildx create --use --name multi-arch
+```
+multi-archドライバが inactive になっているので起動
+```
+docker buildx inspect --builder multi-arch --bootstrap
+```
+プッシュ方法
+```
+docker buildx build --platform linux/amd64,linux/arm64 -t IMAGE_TAG --push .
+```
