@@ -11,8 +11,8 @@ make
 sudo make install                                                                                 
 cd ../                                                                                         
 rm -rf Python-$PYTHON_VERSION                                                                
-ln -s /usr/local/python/bin/python3 /usr/local/python/bin/python                             
-ln -s /usr/local/python/bin/pip3 /usr/local/python/bin/pip
+sudo ln -s /usr/local/python/bin/python3 /usr/local/python/bin/python                             
+sudo ln -s /usr/local/python/bin/pip3 /usr/local/python/bin/pip
 echo 'export PATH=/usr/local/python/bin:$PATH' >> ~/.bashrc   
 echo 'export PYTHONDONTWRITEBYTECODE=1' >> ~/.bashrc
 python -m pip install --upgrade pip setuptools
