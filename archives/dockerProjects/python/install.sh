@@ -1,7 +1,7 @@
 #!/bin/bash
 IMAGEOS=debian
 PYTHON_VERSIONS=(
-    # 3.11.1
+    3.11.1
     3.10.9
     3.9.16
     3.8.16

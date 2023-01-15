@@ -9,12 +9,29 @@ RUN apt install -y sudo git curl wget
 RUN apt install -y xz-utils zlib1g-dev zip
 
 # Python Install
-ARG PYTHON_VERSION=3.7.16
-RUN git clone https://github.com/skrjtech/linux-setup.git
-RUN sed -i 's/sudo apt/apt/g' linux-setup/installer/python.sh
-RUN cat linux-setup/installer/python.sh
-RUN DEBIAN_FRONTEND=noninteractive . linux-setup/installer/python.sh $PYTHON_VERSION
-RUN rm -rf linux-setup
+ENV PYTHON_VERSION=3.7.16
+RUN set -x && \
+    DEBIAN_FRONTEND=noninteractive apt install -y curl make cmake tk-dev xz-utils uuid-dev libdb-dev libssl-dev zlib1g-dev libbz2-dev libffi-dev \
+                    libgdbm-dev liblzma-dev libsqlite3-dev build-essential libreadline-dev libncursesw5-dev && \
+    curl -O https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.xz && \
+    tar xJf Python-$PYTHON_VERSION.tar.xz && \                                                        
+    rm -rf Python-$PYTHON_VERSION.tar.xz && \                                                   
+    cd Python-$PYTHON_VERSION && \                                                    
+    ./configure --prefix=/usr/local/python --with-ensurepip && \
+    make  && \                                 
+    make install  && \
+    cd ../  && \
+    rm -rf Python-$PYTHON_VERSION && \
+    ln -s /usr/local/python/bin/python3 /usr/local/python/bin/python && \
+    ln -s /usr/local/python/bin/pip3 /usr/local/python/bin/pip  && \
+    export PATH=/usr/local/python/bin:$PATH && \
+    echo "export PATH=${PATH}" >> ~/.bashrc && \
+    echo 'export PYTHONDONTWRITEBYTECODE=1' >> ~/.bashrc && \
+    source ~/.bashrc && \
+    # PIP UPDATE
+    python3 -m pip install --upgrade pip setuptools && \
+    set +x
+
 ENV PATH /usr/local/python/bin:$PATH
 
 # YOLACT 
