@@ -24,4 +24,4 @@ sudo ln -s /usr/local/python/bin/pip3 /usr/bin/pip
 echo 'export PYTHONDONTWRITEBYTECODE=1' >> ~/.bashrc
 source ~/.bashrc
 # PIP UPDATE
-python3 -m pip install --upgrade pip setuptools
+python -m pip install --upgrade pip setuptools
