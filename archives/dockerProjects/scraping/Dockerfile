@@ -31,7 +31,7 @@ RUN python -m pip install requests \
 # 画像処理用
 RUN apt install -y ffmpeg
 
-# Chromium And Driver
-RUN apt-get install -y chromium chromium-driver
+COPY build.sh /build.sh
+RUN . build.sh
 
 CMD [ "/bin/bash" ]
