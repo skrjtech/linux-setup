@@ -19,8 +19,8 @@ rm -rf Python-$PYTHON_VERSION
 sudo ln -s /usr/local/python/bin/python3 /usr/bin/python                             
 sudo ln -s /usr/local/python/bin/pip3 /usr/bin/pip
 
-#export PATH=/usr/local/python/bin:$PATH
-echo "export PATH=${PATH}" >> ~/.bashrc   
+# export PATH=/usr/local/python/bin:$PATH
+# echo "export PATH=${PATH}" >> ~/.bashrc   
 echo 'export PYTHONDONTWRITEBYTECODE=1' >> ~/.bashrc
 source ~/.bashrc
 # PIP UPDATE
