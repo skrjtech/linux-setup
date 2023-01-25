@@ -5,7 +5,7 @@ SHELL [ "/bin/bash", "-c" ]
 
 # Update
 RUN apt update && apt -y upgrade
-RUN apt-get update && apt-get -u upgrade
+RUN apt-get update && apt-get -y upgrade
 RUN apt install -y sudo git
 
 # Python Install
